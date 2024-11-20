@@ -1,0 +1,24 @@
+---
+
+import { type CollectionEntry } from "astro:content";
+import Posts from "./Posts.astro";
+
+type Props={
+    posts:CollectionEntry<'posts'>[];
+};
+
+const {posts}=Astro.props;
+
+---
+
+<div class="grid grid-cols-2 gap-x-16 gap-y-14 mb-24">
+    {
+     
+        posts.map(post => 
+
+                <Posts posts={post}/>
+
+            )
+        
+    }
+</div>
